@@ -1,5 +1,6 @@
 package com.bungfro.corruption;
 
+import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -45,6 +46,10 @@ public class Corruption
 
     private void addToCreative(CreativeModeTabEvent.BuildContents event) {
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.CorruptedDust);
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
             event.accept(ModItems.CorruptedDust);
         }
     }
