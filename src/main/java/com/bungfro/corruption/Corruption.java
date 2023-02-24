@@ -53,11 +53,13 @@ public class Corruption
         }
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModBlocks.SOUL_CONTAINER);
         }
 
         if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
             event.accept(ModBlocks.SOUL_CONTAINER);
+            event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
         }
     }
