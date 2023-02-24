@@ -1,5 +1,6 @@
 package com.bungfro.corruption;
 
+import com.bungfro.corruption.block.ModBlocks;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -31,6 +32,8 @@ public class Corruption
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addToCreative);
@@ -49,7 +52,12 @@ public class Corruption
             event.accept(ModItems.CorruptedDust);
         }
 
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SOUL_CONTAINER);
+        }
+
         if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
+            event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModItems.CorruptedDust);
         }
     }

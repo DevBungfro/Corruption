@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/oak_planks",
+    "east": "corruption:block/soul_container_side",
+    "north": "corruption:block/soul_container_front",
+    "particle": "corruption:block/soul_container_front",
+    "south": "corruption:block/soul_container_side",
+    "up": "corruption:block/soul_container_top",
+    "west": "corruption:block/soul_container_front"
+  }
+}
