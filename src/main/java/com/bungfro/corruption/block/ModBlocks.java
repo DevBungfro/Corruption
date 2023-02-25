@@ -22,6 +22,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CORRUPTED_WOOD = registerBlock("corrupted_wood", () ->
             new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CORRUPTED_LEAVES = registerBlock("corrupted_leaves", () ->
+            new Block(BlockBehaviour.Properties.of(Material.LEAVES).strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CORRUPTED_LOGS = registerBlock("corrupted_logs", () ->
+            new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

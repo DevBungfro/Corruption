@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "corruption:corrupted_wood"
+      "item": "corruption:corrupted_wood"
     }
   },
   "pattern": [

@@ -2,6 +2,8 @@
   "item.corruption.corrupteddust": "Corrupted Dust",
   "block.corruption.soul_container": "Soul Container",
   "block.corruption.corrupted_wood": "Corrupted Wood",
+  "block.corruption.corrupted_leaves": "Corrupted Leaves",
+  "block.corruption.corrupted_logs": "Corrupted Logs",
 
   "creativemodetab.corruption_tab": "Corruption"
 }
