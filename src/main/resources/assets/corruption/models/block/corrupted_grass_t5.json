@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/dirt",
+    "top": "corruption:block/corruption_grass_block_t5",
+    "side": "corruption:block/corruption_grass_block_t5"
+  }
+}

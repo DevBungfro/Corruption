@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "corruption:block/corrupted_grass_t3"
-    }
+    "": [
+      { "model": "corruption:block/corrupted_grass_t3" },
+      { "model": "corruption:block/corrupted_grass_t3", "y": 90 },
+      { "model": "corruption:block/corrupted_grass_t3", "y": 180 },
+      { "model": "corruption:block/corrupted_grass_t3", "y": 270 }
+    ]
   }
 }
