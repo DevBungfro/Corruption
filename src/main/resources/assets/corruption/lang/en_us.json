@@ -1,6 +1,11 @@
 {
   "item.corruption.corrupteddust": "Corrupted Dust",
 
+  "item.corruption.toxic_flame_helmet_light": "Light Toxic Flame Helmet",
+  "item.corruption.toxic_flame_chestplate_light": "Light Toxic Flame Chestplate",
+  "item.corruption.toxic_flame_leggings_light": "Light Toxic Flame Leggings",
+  "item.corruption.toxic_flame_boots_light": "Light Toxic Flame Boots",
+
 
   "block.corruption.soul_container": "Soul Container",
   "block.corruption.corrupted_wood": "Corrupted Wood",

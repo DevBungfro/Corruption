@@ -52,6 +52,14 @@ public class Corruption
             event.accept(ModItems.CorruptedDust);
         }
 
+        if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            // Armor
+            event.accept(ModItems.TOXIC_FLAME_HELMET_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_LEGGINGS_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_BOOTS_LIGHT);
+        }
+
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             // Corrupted Grass
             event.accept(ModBlocks.CORRUPTED_GRASS_T1);
@@ -65,6 +73,9 @@ public class Corruption
             event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModBlocks.CORRUPTED_LEAVES);
             event.accept(ModBlocks.CORRUPTED_LOGS);
+
+
+
         }
 
         if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
@@ -81,6 +92,12 @@ public class Corruption
             event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
+
+            // Armor
+            event.accept(ModItems.TOXIC_FLAME_HELMET_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_LEGGINGS_LIGHT);
+            event.accept(ModItems.TOXIC_FLAME_BOOTS_LIGHT);
         }
     }
 
