@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "corruption:corrupted_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "corruption:corrupted_wood"
+  }
+}

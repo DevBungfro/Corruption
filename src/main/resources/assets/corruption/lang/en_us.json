@@ -1,9 +1,18 @@
 {
   "item.corruption.corrupteddust": "Corrupted Dust",
+
+
   "block.corruption.soul_container": "Soul Container",
   "block.corruption.corrupted_wood": "Corrupted Wood",
   "block.corruption.corrupted_leaves": "Corrupted Leaves",
   "block.corruption.corrupted_logs": "Corrupted Logs",
+
+  "block.corruption.corrupted_grass_t1": "Corrupted Grass T1",
+  "block.corruption.corrupted_grass_t2": "Corrupted Grass T2",
+  "block.corruption.corrupted_grass_t3": "Corrupted Grass T3",
+  "block.corruption.corrupted_grass_t4": "Corrupted Grass T4",
+  "block.corruption.corrupted_grass_t5": "Corrupted Grass T5",
+
 
   "creativemodetab.corruption_tab": "Corruption"
 }

@@ -53,11 +53,31 @@ public class Corruption
         }
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            // Corrupted Grass
+            event.accept(ModBlocks.CORRUPTED_GRASS_T1);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T2);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T3);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T4);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T5);
+            // CG End
+
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModBlocks.SOUL_CONTAINER);
+            event.accept(ModBlocks.CORRUPTED_LEAVES);
+            event.accept(ModBlocks.CORRUPTED_LOGS);
         }
 
         if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
+            // Corrupted Grass
+            event.accept(ModBlocks.CORRUPTED_GRASS_T1);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T2);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T3);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T4);
+            event.accept(ModBlocks.CORRUPTED_GRASS_T5);
+            // CG End
+
+            event.accept(ModBlocks.CORRUPTED_LEAVES);
+            event.accept(ModBlocks.CORRUPTED_LOGS);
             event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
