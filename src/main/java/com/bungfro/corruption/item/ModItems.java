@@ -34,16 +34,16 @@ public class ModItems {
 
     // Toxic Flame Heavy
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_HELMET_HEAVY = ITEMS.register("toxic_flame_helmet_heavy",
-            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.HEAD, new Item.Properties()));
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_HEAVY, EquipmentSlot.HEAD, new Item.Properties()));
 
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_CHESTPLATE_HEAVY = ITEMS.register("toxic_flame_chestplate_heavy",
-            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.CHEST, new Item.Properties()));
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_HEAVY, EquipmentSlot.CHEST, new Item.Properties()));
 
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_LEGGINGS_HEAVY = ITEMS.register("toxic_flame_leggings_heavy",
-            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.LEGS, new Item.Properties()));
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_HEAVY, EquipmentSlot.LEGS, new Item.Properties()));
 
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_BOOTS_HEAVY = ITEMS.register("toxic_flame_boots_heavy",
-            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.FEET, new Item.Properties()));
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_HEAVY, EquipmentSlot.FEET, new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -51,6 +51,17 @@ public class ModItems {
     public static class ArmorTiers {
         public static final ArmorMaterial TOXIC_FLAME_LIGHT = new ModArmorMaterial(
                 "toxic_flame_light",
+                500,
+                new int[] { 20, 40, 50, 10 },
+                300,
+                SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.0f,
+                0.0f,
+                () -> Ingredient.of(ModItems.CorruptedDust.get())
+        );
+
+        public static final ArmorMaterial TOXIC_FLAME_HEAVY = new ModArmorMaterial(
+                "toxic_flame_heavy",
                 500,
                 new int[] { 20, 40, 50, 10 },
                 300,
