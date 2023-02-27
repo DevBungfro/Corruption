@@ -1,6 +1,7 @@
 package com.bungfro.corruption;
 
 import com.bungfro.corruption.block.ModBlocks;
+import com.bungfro.corruption.entity.ModEntity;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -33,6 +34,7 @@ public class Corruption
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntity.ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -79,8 +81,7 @@ public class Corruption
             event.accept(ModBlocks.CORRUPTED_LEAVES);
             event.accept(ModBlocks.CORRUPTED_LOGS);
 
-
-
+            event.accept(ModBlocks.WORKPLACE_OF_CORRUPTION);
         }
 
         if (event.getTab() == ModCreativeModeTabs.CorruptionTab) {
@@ -98,6 +99,7 @@ public class Corruption
             event.accept(ModBlocks.SOUL_INFUSER);
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
+            event.accept(ModBlocks.WORKPLACE_OF_CORRUPTION);
 
             // Armor
             event.accept(ModItems.TOXIC_FLAME_HELMET_LIGHT);
@@ -112,14 +114,4 @@ public class Corruption
         }
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
-        }
-    }
 }

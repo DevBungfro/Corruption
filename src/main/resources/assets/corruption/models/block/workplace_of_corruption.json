@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "corruption:block/corruption_workplace_bottom",
+    "east": "corruption:block/corruption_workplace_left",
+    "north": "corruption:block/corruption_workplace_front",
+    "particle": "corruption:block/corruption_workplace_front",
+    "south": "corruption:block/corruption_workplace_back",
+    "up": "corruption:block/corruption_workplace_top",
+    "west": "corruption:block/corruption_workplace_right"
+  }
+}
