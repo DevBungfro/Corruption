@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "corruption:item/toxic_flame_boots_heavy"
+  }
+}

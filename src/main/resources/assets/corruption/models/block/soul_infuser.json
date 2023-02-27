@@ -1,0 +1,46 @@
+{
+  "parent": "soul_infuser",
+  "texture_size": [64, 64],
+  "textures": {
+    "1": "corruption:block/soul_infuser",
+    "particle": "corruption:block/soul_infuser"
+  },
+  "elements": [
+    {
+      "from": [0, 4, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 8, 4, 11], "texture": "#1"},
+        "east": {"uv": [8, 0, 12, 3], "texture": "#1"},
+        "south": {"uv": [8, 3, 12, 6], "texture": "#1"},
+        "west": {"uv": [4, 8, 8, 11], "texture": "#1"},
+        "up": {"uv": [4, 4, 0, 0], "texture": "#1"},
+        "down": {"uv": [4, 4, 0, 8], "texture": "#1"}
+      }
+    },
+    {
+      "from": [2, 3, 2],
+      "to": [14, 15, 14],
+      "faces": {
+        "north": {"uv": [8, 6, 11, 9], "texture": "#1"},
+        "east": {"uv": [8, 9, 11, 12], "texture": "#1"},
+        "south": {"uv": [0, 11, 3, 14], "texture": "#1"},
+        "west": {"uv": [3, 11, 6, 14], "texture": "#1"},
+        "up": {"uv": [14, 9, 11, 6], "texture": "#1"},
+        "down": {"uv": [14, 9, 11, 12], "texture": "#1"}
+      }
+    },
+    {
+      "from": [0, 0, 0],
+      "to": [16, 4, 16],
+      "faces": {
+        "north": {"uv": [12, 0, 16, 1], "texture": "#1"},
+        "east": {"uv": [12, 1, 16, 2], "texture": "#1"},
+        "south": {"uv": [12, 2, 16, 3], "texture": "#1"},
+        "west": {"uv": [12, 3, 16, 4], "texture": "#1"},
+        "up": {"uv": [8, 4, 4, 0], "texture": "#1"},
+        "down": {"uv": [8, 4, 4, 8], "texture": "#1"}
+      }
+    }
+  ]
+}

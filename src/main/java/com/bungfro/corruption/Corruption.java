@@ -58,6 +58,11 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_LIGHT);
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_LIGHT);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_LIGHT);
+
+            event.accept(ModItems.TOXIC_FLAME_HELMET_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
         }
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -67,10 +72,10 @@ public class Corruption
             event.accept(ModBlocks.CORRUPTED_GRASS_T3);
             event.accept(ModBlocks.CORRUPTED_GRASS_T4);
             event.accept(ModBlocks.CORRUPTED_GRASS_T5);
-            // CG End
 
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModBlocks.SOUL_CONTAINER);
+            event.accept(ModBlocks.SOUL_INFUSER);
             event.accept(ModBlocks.CORRUPTED_LEAVES);
             event.accept(ModBlocks.CORRUPTED_LOGS);
 
@@ -90,6 +95,7 @@ public class Corruption
             event.accept(ModBlocks.CORRUPTED_LEAVES);
             event.accept(ModBlocks.CORRUPTED_LOGS);
             event.accept(ModBlocks.SOUL_CONTAINER);
+            event.accept(ModBlocks.SOUL_INFUSER);
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
 
@@ -98,6 +104,11 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_LIGHT);
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_LIGHT);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_LIGHT);
+
+            event.accept(ModItems.TOXIC_FLAME_HELMET_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
         }
     }
 

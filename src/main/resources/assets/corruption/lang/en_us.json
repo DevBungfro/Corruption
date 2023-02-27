@@ -6,8 +6,14 @@
   "item.corruption.toxic_flame_leggings_light": "Light Toxic Flame Leggings",
   "item.corruption.toxic_flame_boots_light": "Light Toxic Flame Boots",
 
+  "item.corruption.toxic_flame_helmet_heavy": "Heavy Toxic Flame Helmet",
+  "item.corruption.toxic_flame_chestplate_heavy": "Heavy Toxic Flame Chestplate",
+  "item.corruption.toxic_flame_leggings_heavy": "Heavy Toxic Flame Leggings",
+  "item.corruption.toxic_flame_boots_heavy": "Heavy Toxic Flame Boots",
+
 
   "block.corruption.soul_container": "Soul Container",
+  "block.corruption.soul_infuser": "Soul Infuser",
   "block.corruption.corrupted_wood": "Corrupted Wood",
   "block.corruption.corrupted_leaves": "Corrupted Leaves",
   "block.corruption.corrupted_logs": "Corrupted Logs",

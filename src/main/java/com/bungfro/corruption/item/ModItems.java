@@ -31,6 +31,19 @@ public class ModItems {
 
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_BOOTS_LIGHT = ITEMS.register("toxic_flame_boots_light",
             () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.FEET, new Item.Properties()));
+
+    // Toxic Flame Heavy
+    public static final RegistryObject<ArmorItem> TOXIC_FLAME_HELMET_HEAVY = ITEMS.register("toxic_flame_helmet_heavy",
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.HEAD, new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> TOXIC_FLAME_CHESTPLATE_HEAVY = ITEMS.register("toxic_flame_chestplate_heavy",
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.CHEST, new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> TOXIC_FLAME_LEGGINGS_HEAVY = ITEMS.register("toxic_flame_leggings_heavy",
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.LEGS, new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> TOXIC_FLAME_BOOTS_HEAVY = ITEMS.register("toxic_flame_boots_heavy",
+            () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_LIGHT, EquipmentSlot.FEET, new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

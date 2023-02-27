@@ -19,9 +19,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOUL_CONTAINER = registerBlock("soul_container", () ->
             new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SOUL_INFUSER = registerBlock("soul_infuser", () ->
+            new Block(BlockBehaviour.Properties.of(Material.PISTON).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CORRUPTED_WOOD = registerBlock("corrupted_wood", () ->
-            new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f).requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f)));
     public static final RegistryObject<Block> CORRUPTED_LEAVES = registerBlock("corrupted_leaves", () ->
             new Block(BlockBehaviour.Properties.of(Material.LEAVES).strength(2f).requiresCorrectToolForDrops()));
 
