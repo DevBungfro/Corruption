@@ -78,8 +78,13 @@ public class Corruption
             event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModBlocks.SOUL_INFUSER);
+
             event.accept(ModBlocks.CORRUPTED_LEAVES);
-            event.accept(ModBlocks.CORRUPTED_LOGS);
+            event.accept(ModBlocks.CORRUPTED_LOG);
+            event.accept(ModBlocks.STRIPPED_CORRUPTED_LOG);
+            event.accept(ModBlocks.STRIPPED_CORRUPTED_WOOD);
+            event.accept(ModBlocks.CORRUPTED_WOOD);
+            event.accept(ModBlocks.CORRUPTED_PLANKS);
 
             event.accept(ModBlocks.WORKPLACE_OF_CORRUPTION);
         }
@@ -93,13 +98,17 @@ public class Corruption
             event.accept(ModBlocks.CORRUPTED_GRASS_T5);
             // CG End
 
-            event.accept(ModBlocks.CORRUPTED_LEAVES);
-            event.accept(ModBlocks.CORRUPTED_LOGS);
             event.accept(ModBlocks.SOUL_CONTAINER);
             event.accept(ModBlocks.SOUL_INFUSER);
-            event.accept(ModBlocks.CORRUPTED_WOOD);
             event.accept(ModItems.CorruptedDust);
             event.accept(ModBlocks.WORKPLACE_OF_CORRUPTION);
+
+            event.accept(ModBlocks.CORRUPTED_LEAVES);
+            event.accept(ModBlocks.CORRUPTED_LOG);
+            event.accept(ModBlocks.STRIPPED_CORRUPTED_LOG);
+            event.accept(ModBlocks.STRIPPED_CORRUPTED_WOOD);
+            event.accept(ModBlocks.CORRUPTED_WOOD);
+            event.accept(ModBlocks.CORRUPTED_PLANKS);
 
             // Armor
             event.accept(ModItems.TOXIC_FLAME_HELMET_LIGHT);

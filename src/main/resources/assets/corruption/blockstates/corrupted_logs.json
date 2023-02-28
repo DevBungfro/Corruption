@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "": {
-      "model": "corruption:block/corrupted_logs"
-    }
-  }
-}
