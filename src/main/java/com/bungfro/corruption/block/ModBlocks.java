@@ -1,10 +1,12 @@
 package com.bungfro.corruption.block;
 
 import com.bungfro.corruption.Corruption;
+import com.bungfro.corruption.block.custom.WorkplaceOfCorruptionBlock;
 import com.bungfro.corruption.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,15 +25,8 @@ public class ModBlocks {
             new Block(BlockBehaviour.Properties.of(Material.PISTON).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> WORKPLACE_OF_CORRUPTION = registerBlock("workplace_of_corruption", () ->
-            new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6f).requiresCorrectToolForDrops()));
+            new WorkplaceOfCorruptionBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6f).requiresCorrectToolForDrops().noOcclusion()));
 
-    public static final RegistryObject<Block> CORRUPTED_WOOD = registerBlock("corrupted_wood", () ->
-            new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f)));
-    public static final RegistryObject<Block> CORRUPTED_LEAVES = registerBlock("corrupted_leaves", () ->
-            new Block(BlockBehaviour.Properties.of(Material.LEAVES).strength(2f).requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> CORRUPTED_LOGS = registerBlock("corrupted_logs", () ->
-            new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f).requiresCorrectToolForDrops()));
 
     // Corrupted Grass Tiers
     public static final RegistryObject<Block> CORRUPTED_GRASS_T1 = registerBlock("corrupted_grass_t1", () ->
@@ -49,6 +44,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORRUPTED_GRASS_T5 = registerBlock("corrupted_grass_t5", () ->
             new Block(BlockBehaviour.Properties.of(Material.GRASS).strength(2f).requiresCorrectToolForDrops()));
 
+    // Corrupted Wood / Planks / Leaves/ ETC
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
