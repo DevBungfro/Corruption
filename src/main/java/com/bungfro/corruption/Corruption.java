@@ -54,7 +54,7 @@ public class Corruption
             event.accept(ModItems.CorruptedDust);
         }
 
-        if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+        if (event.getTab() == CreativeModeTabs.COMBAT) {
             // Armor
             event.accept(ModItems.TOXIC_FLAME_HELMET_LIGHT);
             event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_LIGHT);
@@ -65,6 +65,11 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
+            event.accept(ModItems.TOXIC_FLAME_BOW);
+        }
+
+        if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.TOXIC_FLAME_BOW);
         }
 
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -120,6 +125,9 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_CHESTPLATE_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
+
+            // Tools
+            event.accept(ModItems.TOXIC_FLAME_BOW);
         }
     }
 

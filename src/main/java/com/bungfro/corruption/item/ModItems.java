@@ -4,10 +4,7 @@ import com.bungfro.corruption.Corruption;
 import com.bungfro.corruption.base.ModArmorMaterial;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,6 +41,10 @@ public class ModItems {
 
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_BOOTS_HEAVY = ITEMS.register("toxic_flame_boots_heavy",
             () -> new ArmorItem(ArmorTiers.TOXIC_FLAME_HEAVY, EquipmentSlot.FEET, new Item.Properties()));
+
+    public static final RegistryObject<Item> TOXIC_FLAME_BOW = ITEMS.register("toxic_flame_bow", () -> new BowItem(new Item.Properties().durability(500)));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

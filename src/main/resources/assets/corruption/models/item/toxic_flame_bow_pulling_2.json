@@ -1,0 +1,6 @@
+{
+  "parent": "corruption:item/toxic_flame_bow",
+  "textures": {
+    "layer0": "corruption:item/toxic_flame_bow_pulling_2"
+  }
+}
