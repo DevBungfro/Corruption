@@ -4,6 +4,7 @@ import com.bungfro.corruption.Corruption;
 import com.bungfro.corruption.client.models.BulculiterEntityModel;
 import com.bungfro.corruption.client.renderer.BulculiterEntityRenderer;
 import com.bungfro.corruption.entity.ModEntity;
+import com.bungfro.corruption.util.ModItemProperties;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -17,7 +18,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ModClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-
+        ModItemProperties.addCustomItemProperties();
     }
 
     @SubscribeEvent
