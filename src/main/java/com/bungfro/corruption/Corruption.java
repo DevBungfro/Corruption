@@ -1,6 +1,7 @@
 package com.bungfro.corruption;
 
 import com.bungfro.corruption.block.ModBlocks;
+import com.bungfro.corruption.client.screen.ModMenuTypes;
 import com.bungfro.corruption.entity.ModEntity;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
@@ -34,7 +35,9 @@ public class Corruption
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModEntity.ENTITIES.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -52,6 +55,13 @@ public class Corruption
     private void addToCreative(CreativeModeTabEvent.BuildContents event) {
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.CorruptedDust);
+            event.accept(ModItems.CORRUPTED_STICK);
+            event.accept(ModItems.CORRUPTED_CHITIN);
+
+            event.accept(ModItems.CORRUPTED_BRAIN);
+            event.accept(ModItems.CORRUPTED_FOREGUT);
+            event.accept(ModItems.TOXIC_FLAME_HEART);
+
         }
 
         if (event.getTab() == CreativeModeTabs.COMBAT) {
@@ -66,6 +76,13 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_BOW);
+
+
+            event.accept(ModItems.LAVA_SNOW_HELMET_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_CHESTPLATE_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_LEGGINGS_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_BOOTS_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_BROAD_SWORD);
         }
 
         if (event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -107,6 +124,13 @@ public class Corruption
             event.accept(ModBlocks.SOUL_INFUSER);
             event.accept(ModItems.CorruptedDust);
             event.accept(ModBlocks.WORKPLACE_OF_CORRUPTION);
+            event.accept(ModItems.CORRUPTED_STICK);
+
+            event.accept(ModItems.CORRUPTED_CHITIN);
+            event.accept(ModItems.CORRUPTED_BRAIN);
+            event.accept(ModItems.CORRUPTED_FOREGUT);
+            event.accept(ModItems.TOXIC_FLAME_HEART);
+
 
             event.accept(ModBlocks.CORRUPTED_LEAVES);
             event.accept(ModBlocks.CORRUPTED_LOG);
@@ -126,8 +150,14 @@ public class Corruption
             event.accept(ModItems.TOXIC_FLAME_LEGGINGS_HEAVY);
             event.accept(ModItems.TOXIC_FLAME_BOOTS_HEAVY);
 
+            event.accept(ModItems.LAVA_SNOW_HELMET_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_CHESTPLATE_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_LEGGINGS_HEAVY);
+            event.accept(ModItems.LAVA_SNOW_BOOTS_HEAVY);
+
             // Tools
             event.accept(ModItems.TOXIC_FLAME_BOW);
+            event.accept(ModItems.LAVA_SNOW_BROAD_SWORD);
         }
     }
 

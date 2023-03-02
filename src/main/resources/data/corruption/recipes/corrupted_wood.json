@@ -4,7 +4,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "corruption:corrupted_logs"
+      "item": "corruption:corrupted_log"
     }
   ],
   "result": {

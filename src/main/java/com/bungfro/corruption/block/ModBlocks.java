@@ -12,6 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -30,8 +31,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SOUL_INFUSER = registerBlock("soul_infuser", () ->
             new Block(BlockBehaviour.Properties.of(Material.PISTON).strength(6f).requiresCorrectToolForDrops()));
 
+
     public static final RegistryObject<Block> WORKPLACE_OF_CORRUPTION = registerBlock("workplace_of_corruption", () ->
-            new WorkplaceOfCorruptionBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6f).requiresCorrectToolForDrops().noOcclusion()));
+            new WorkplaceOfCorruptionBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(4F).sound(SoundType.METAL)));
 
 
     // Corrupted Grass Tiers

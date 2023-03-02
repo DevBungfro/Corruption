@@ -1,5 +1,13 @@
 {
+  "container.workplace_of_corruption": "Workplace Of Corruption",
+
   "item.corruption.corrupteddust": "Corrupted Dust",
+  "item.corruption.corrupted_stick": "Corrupted Stick",
+  "item.corruption.corrupted_chitin": "Corrupted Chitin",
+  "item.corruption.corrupted_foregut": "Corrupted Foregut",
+  "item.corruption.corrupted_brain": "Corrupted Brain",
+  "item.corruption.toxic_flame_heart": "Toxic Flame Heart",
+
 
   "item.corruption.toxic_flame_helmet_light": "Light Toxic Flame Helmet",
   "item.corruption.toxic_flame_chestplate_light": "Light Toxic Flame Chestplate",
@@ -10,6 +18,11 @@
   "item.corruption.toxic_flame_chestplate_heavy": "Heavy Toxic Flame Chestplate",
   "item.corruption.toxic_flame_leggings_heavy": "Heavy Toxic Flame Leggings",
   "item.corruption.toxic_flame_boots_heavy": "Heavy Toxic Flame Boots",
+
+  "item.corruption.lava_snow_heavy_helmet": "Heavy Lava Snow Helmet",
+  "item.corruption.lava_snow_heavy_chestplate": "Heavy Lava Snow Chestplate",
+  "item.corruption.lava_snow_heavy_leggings": "Heavy Lava Snow Leggings",
+  "item.corruption.lava_snow_heavy_boots": "Heavy Lava Snow Boots",
 
   "item.corruption.toxic_flame_bow": "Toxic Flame Bow",
 

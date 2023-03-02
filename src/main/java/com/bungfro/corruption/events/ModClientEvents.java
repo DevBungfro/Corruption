@@ -3,6 +3,8 @@ package com.bungfro.corruption.events;
 import com.bungfro.corruption.Corruption;
 import com.bungfro.corruption.client.models.BulculiterEntityModel;
 import com.bungfro.corruption.client.renderer.BulculiterEntityRenderer;
+import com.bungfro.corruption.client.screen.ModMenuTypes;
+import com.bungfro.corruption.client.screen.wpoc.WorkplaceOfCorruptionScreen;
 import com.bungfro.corruption.entity.ModEntity;
 import com.bungfro.corruption.util.ModItemProperties;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -19,6 +21,10 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         ModItemProperties.addCustomItemProperties();
+
+        event.enqueueWork(
+                () -> MenuScreens.register(ModMenuTypes.WORKPLACE.get(), WorkplaceOfCorruptionScreen::new)
+        );
     }
 
     @SubscribeEvent

@@ -1,5 +1,6 @@
 package com.bungfro.corruption.block.custom;
 
+import com.bungfro.corruption.client.screen.wpoc.WorkplaceOfCorruptionMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
@@ -23,4 +24,18 @@ public class WorkplaceOfCorruptionBlock extends Block {
         super(pProperties);
     }
 
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide) {
+            return InteractionResult.SUCCESS;
+        } else {
+            pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
+            return InteractionResult.CONSUME;
+        }
+    }
+
+    public MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos) {
+        return new SimpleMenuProvider((p_52229_, p_52230_, p_52231_) -> {
+            return new WorkplaceOfCorruptionMenu(p_52229_, p_52230_, ContainerLevelAccess.create(pLevel, pPos));
+        }, CONTAINER_TITLE);
+    }
 }
