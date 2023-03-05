@@ -1,0 +1,16 @@
+{
+  "type": "corruption:workplace_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "corruption:corrupted_wood"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "corruption:soul_container"
+  }
+}

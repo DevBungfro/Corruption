@@ -30,6 +30,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> LAVA_SNOW_BROAD_SWORD = ITEMS.register("lava_snow_broad_sword", () -> new SwordItem(ToolTiers.LAVA_SNOW_BROAD_SWORD, 2, 3f, new Item.Properties()));
 
+    public static final RegistryObject<Item> LAVA_SNOW_KNIFE = ITEMS.register("lava_snow_knife", () -> new SwordItem(ToolTiers.LAVA_SNOW_KNIFE, 2, 3f, new Item.Properties()));
+
 
     // Armor Items
     public static final RegistryObject<ArmorItem> TOXIC_FLAME_HELMET_LIGHT = ITEMS.register("toxic_flame_helmet_light",
@@ -114,6 +116,15 @@ public class ModItems {
 
     public static class ToolTiers {
         public final static ForgeTier LAVA_SNOW_BROAD_SWORD = new ForgeTier(
+                2,
+                1400,
+                1.5f,
+                2f,
+                22,
+                BlockTags.NEEDS_DIAMOND_TOOL,
+                () -> Ingredient.of(ModItems.CorruptedDust.get()));
+
+        public final static ForgeTier LAVA_SNOW_KNIFE = new ForgeTier(
                 2,
                 1400,
                 1.5f,

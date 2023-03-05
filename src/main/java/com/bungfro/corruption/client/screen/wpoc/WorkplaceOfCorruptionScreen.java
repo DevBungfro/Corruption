@@ -20,29 +20,17 @@ public class WorkplaceOfCorruptionScreen extends AbstractContainerScreen<Workpla
 
     public WorkplaceOfCorruptionScreen(WorkplaceOfCorruptionMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
-    }
 
-    protected void init() {
-        super.init();
-        this.imageHeight = 256;
-        this.imageWidth = 256;
-
-        this.widthTooNarrow = this.width < 379;
-        this.titleLabelX = 29;
-    }
-
-    public void containerTick() {
-        super.containerTick();
-    }
+        this.passEvents = false;
+        int i = 222;
+        int j = 114;
+        this.imageHeight = 114 + 6 * 18;
+        this.inventoryLabelY = this.imageHeight - 94;
+}
 
     public void render(PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderBackground(pPoseStack);
-        if (this.widthTooNarrow) {
-            this.renderBg(pPoseStack, pPartialTick, pMouseX, pMouseY);
-        } else {
-            super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
-        }
-
+        super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
         this.renderTooltip(pPoseStack, pMouseX, pMouseY);
     }
 
@@ -50,10 +38,18 @@ public class WorkplaceOfCorruptionScreen extends AbstractContainerScreen<Workpla
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, WORKPLACE_LOCATION);
-        int i = this.leftPos;
+        int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
-        this.blit(pPoseStack, i, j, 0, 0, this.imageWidth, this.imageHeight);
+        this.blit(pPoseStack, i, j, 0, 0, this.imageWidth, 6 * 18 + 17);
+        this.blit(pPoseStack, i, j + 6 * 18 + 17, 0, 126, this.imageWidth, 96);
     }
+
+
+    public void containerTick() {
+        super.containerTick();
+    }
+
+
 
     protected boolean isHovering(int pX, int pY, int pWidth, int pHeight, double pMouseX, double pMouseY) {
         return (!this.widthTooNarrow) && super.isHovering(pX, pY, pWidth, pHeight, pMouseX, pMouseY);

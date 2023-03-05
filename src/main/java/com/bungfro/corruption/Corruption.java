@@ -5,16 +5,15 @@ import com.bungfro.corruption.client.screen.ModMenuTypes;
 import com.bungfro.corruption.entity.ModEntity;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
+import com.bungfro.corruption.recipe.ModRecipeTypes;
+import com.bungfro.corruption.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,6 +37,9 @@ public class Corruption
 
         ModEntity.ENTITIES.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipeTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

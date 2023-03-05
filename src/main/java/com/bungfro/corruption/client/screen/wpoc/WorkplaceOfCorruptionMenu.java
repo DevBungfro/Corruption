@@ -2,6 +2,8 @@ package com.bungfro.corruption.client.screen.wpoc;
 
 import com.bungfro.corruption.block.ModBlocks;
 import com.bungfro.corruption.client.screen.ModMenuTypes;
+import com.bungfro.corruption.recipe.ModRecipeTypes;
+import com.bungfro.corruption.recipe.WorkplaceOfCorruptionRecipe;
 import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -10,14 +12,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
 import java.util.Optional;
 
-public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer> {
+public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorruptionContainer> {
     public static final int RESULT_SLOT = 0;
     private static final int CRAFT_SLOT_START = 1;
     private static final int CRAFT_SLOT_END = 10;
@@ -25,7 +25,7 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer>
     private static final int INV_SLOT_END = 37;
     private static final int USE_ROW_SLOT_START = 37;
     private static final int USE_ROW_SLOT_END = 46;
-    private final CraftingContainer craftSlots = new CraftingContainer(this, 5, 5);
+    private final WorkplaceOfCorruptionContainer craftSlots = new WorkplaceOfCorruptionContainer(this, 5, 5);
     private final ResultContainer resultSlots = new ResultContainer();
     private final ContainerLevelAccess access;
     private final Player player;
@@ -38,7 +38,7 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer>
         super(ModMenuTypes.WORKPLACE.get(), pContainerId);
         this.access = pAccess;
         this.player = pPlayerInventory.player;
-        this.addSlot(new ResultSlot(pPlayerInventory.player, this.craftSlots, this.resultSlots, 0, 124, 35));
+        this.addSlot(new WorkplaceOfCorruptionResultSlot(pPlayerInventory.player, this.craftSlots, this.resultSlots, 0, 160, 54));
 
         for(int j = 0; j < 5; ++j) {
             for(int k = 0; k < 5; ++k) {
@@ -46,31 +46,26 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer>
             }
         }
 
-        //for(int j = 0; j < 5; j++) {
-           // for(int k = 0; k < 5; k++) {
-              //  this.addSlot(new Slot(this.craftSlots, k + j * 5, 44 + k * 18, -25 + j * 18));
-           // }
-       // }
 
         for(int l = 0; l < 3; ++l) {
             for(int j1 = 0; j1 < 9; ++j1) {
-                this.addSlot(new Slot(pPlayerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 101 + l * 18));
+                this.addSlot(new Slot(pPlayerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + 36));
             }
         }
 
         for(int i1 = 0; i1 < 9; ++i1) {
-            this.addSlot(new Slot(pPlayerInventory, i1, 8 + i1 * 18, 159));
+            this.addSlot(new Slot(pPlayerInventory, i1, 8 + i1 * 18, 161 + 36));
         }
 
     }
 
-    protected static void slotChangedCraftingGrid(AbstractContainerMenu pMenu, Level pLevel, Player pPlayer, CraftingContainer pContainer, ResultContainer pResult) {
+    protected static void slotChangedCraftingGrid(AbstractContainerMenu pMenu, Level pLevel, Player pPlayer, WorkplaceOfCorruptionContainer pContainer, ResultContainer pResult) {
         if (!pLevel.isClientSide) {
             ServerPlayer serverplayer = (ServerPlayer)pPlayer;
             ItemStack itemstack = ItemStack.EMPTY;
-            Optional<CraftingRecipe> optional = pLevel.getServer().getRecipeManager().getRecipeFor(RecipeType.CRAFTING, pContainer, pLevel);
+            Optional<WorkplaceOfCorruptionRecipe> optional = pLevel.getServer().getRecipeManager().getRecipeFor(ModRecipeTypes.WORKPLACE_OF_CORRUPTION.get(), pContainer, pLevel);
             if (optional.isPresent()) {
-                CraftingRecipe craftingrecipe = optional.get();
+                WorkplaceOfCorruptionRecipe craftingrecipe = optional.get();
                 if (pResult.setRecipeUsed(pLevel, serverplayer, craftingrecipe)) {
                     ItemStack itemstack1 = craftingrecipe.assemble(pContainer);
                     if (itemstack1.isItemEnabled(pLevel.enabledFeatures())) {
@@ -103,8 +98,10 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer>
         this.resultSlots.clearContent();
     }
 
-    public boolean recipeMatches(Recipe<? super CraftingContainer> pRecipe) {
+    @Override
+    public boolean recipeMatches(Recipe<? super WorkplaceOfCorruptionContainer> pRecipe) {
         return pRecipe.matches(this.craftSlots, this.player.level);
+
     }
 
     /**
@@ -123,6 +120,7 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<CraftingContainer>
     public boolean stillValid(Player pPlayer) {
         return stillValid(this.access, pPlayer, ModBlocks.WORKPLACE_OF_CORRUPTION.get());
     }
+
 
     /**
      * Handle when the stack in slot {@code index} is shift-clicked. Normally this moves the stack between the player
