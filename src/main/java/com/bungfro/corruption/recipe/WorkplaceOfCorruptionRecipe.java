@@ -35,12 +35,12 @@ public class WorkplaceOfCorruptionRecipe implements Recipe<WorkplaceOfCorruption
     final int height;
 
     public WorkplaceOfCorruptionRecipe(ResourceLocation id, ItemStack output,
-                                    NonNullList<Ingredient> recipeItems) {
+                                    NonNullList<Ingredient> recipeItems, int width, int height) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
-        this.width = 5;
-        this.height = 5;
+        this.width = width;
+        this.height = height;
     }
 
     public boolean matches(WorkplaceOfCorruptionContainer pInv, Level pLevel) {
@@ -273,7 +273,7 @@ public class WorkplaceOfCorruptionRecipe implements Recipe<WorkplaceOfCorruption
 
     public static class Serializer implements RecipeSerializer<WorkplaceOfCorruptionRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        private static final ResourceLocation NAME = new ResourceLocation("minecraft", "crafting_shaped");
+        private static final ResourceLocation NAME = new ResourceLocation("corruption", "workplace_shaped");
         public WorkplaceOfCorruptionRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
 
@@ -282,8 +282,8 @@ public class WorkplaceOfCorruptionRecipe implements Recipe<WorkplaceOfCorruption
             int i = astring[0].length();
             int j = astring.length;
             NonNullList<Ingredient> nonnulllist = WorkplaceOfCorruptionRecipe.dissolvePattern(astring, map, i, j);
-            ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-            return new WorkplaceOfCorruptionRecipe(pRecipeId, itemstack, nonnulllist);
+            ItemStack itemstack = WorkplaceOfCorruptionRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
+            return new WorkplaceOfCorruptionRecipe(pRecipeId, itemstack, nonnulllist, i, j);
 
         }
 
@@ -298,7 +298,7 @@ public class WorkplaceOfCorruptionRecipe implements Recipe<WorkplaceOfCorruption
             }
 
             ItemStack itemstack = pBuffer.readItem();
-            return new WorkplaceOfCorruptionRecipe(pRecipeId, itemstack, nonnulllist);
+            return new WorkplaceOfCorruptionRecipe(pRecipeId, itemstack, nonnulllist, i, j);
         }
 
         public void toNetwork(FriendlyByteBuf pBuffer, WorkplaceOfCorruptionRecipe pRecipe) {

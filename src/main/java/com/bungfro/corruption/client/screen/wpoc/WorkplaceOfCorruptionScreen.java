@@ -1,6 +1,8 @@
 package com.bungfro.corruption.client.screen.wpoc;
 
 import com.bungfro.corruption.Corruption;
+import com.bungfro.corruption.client.screen.renderer.EnergyInfoArea;
+import com.bungfro.corruption.client.screen.renderer.FluidTankRenderer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -17,6 +19,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class WorkplaceOfCorruptionScreen extends AbstractContainerScreen<WorkplaceOfCorruptionMenu> {
     private static final ResourceLocation WORKPLACE_LOCATION = new ResourceLocation(Corruption.MOD_ID, "textures/gui/corruption_workplace.png");
     private boolean widthTooNarrow;
+    private FluidTankRenderer renderer;
+    private EnergyInfoArea energyInfoArea;
 
     public WorkplaceOfCorruptionScreen(WorkplaceOfCorruptionMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -26,7 +30,26 @@ public class WorkplaceOfCorruptionScreen extends AbstractContainerScreen<Workpla
         int j = 114;
         this.imageHeight = 114 + 6 * 18;
         this.inventoryLabelY = this.imageHeight - 94;
-}
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        assignFluidRenderer();
+        assignEnergyInfoArea();
+    }
+
+    private void assignFluidRenderer() {
+        renderer = new FluidTankRenderer(64000, true, 27, 34);
+    }
+
+    private void assignEnergyInfoArea() {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
+       energyInfoArea = new EnergyInfoArea(x + 156, y + 13, menu.blockEntity.getEnergyStorage());
+    }
+
 
     public void render(PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderBackground(pPoseStack);

@@ -1,9 +1,12 @@
 package com.bungfro.corruption.client.screen.wpoc;
 
 import com.bungfro.corruption.block.ModBlocks;
+import com.bungfro.corruption.block.entity.ModBlockEntities;
+import com.bungfro.corruption.block.entity.WorkplaceOfCorruptionBlockEntity;
 import com.bungfro.corruption.client.screen.ModMenuTypes;
-import com.bungfro.corruption.recipe.ModRecipeTypes;
+import com.bungfro.corruption.client.screen.renderer.FluidTankRenderer;
 import com.bungfro.corruption.recipe.WorkplaceOfCorruptionRecipe;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -14,31 +17,32 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Optional;
 
 public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorruptionContainer> {
-    public static final int RESULT_SLOT = 0;
-    private static final int CRAFT_SLOT_START = 1;
-    private static final int CRAFT_SLOT_END = 10;
-    private static final int INV_SLOT_START = 10;
-    private static final int INV_SLOT_END = 37;
-    private static final int USE_ROW_SLOT_START = 37;
-    private static final int USE_ROW_SLOT_END = 46;
     private final WorkplaceOfCorruptionContainer craftSlots = new WorkplaceOfCorruptionContainer(this, 5, 5);
     private final ResultContainer resultSlots = new ResultContainer();
     private final ContainerLevelAccess access;
     private final Player player;
 
-    public WorkplaceOfCorruptionMenu(int pContainerId, Inventory pPlayerInventory) {
-        this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
+    public final WorkplaceOfCorruptionBlockEntity blockEntity;
+
+    private FluidStack fluidStack;
+
+    public WorkplaceOfCorruptionMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf extraData) {
+        this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL, pPlayerInventory.player.level.getBlockEntity(extraData.readBlockPos()));
     }
 
-    public WorkplaceOfCorruptionMenu(int pContainerId, Inventory pPlayerInventory, ContainerLevelAccess pAccess) {
-        super(ModMenuTypes.WORKPLACE.get(), pContainerId);
+    public WorkplaceOfCorruptionMenu(int pContainerId, Inventory pPlayerInventory, ContainerLevelAccess pAccess, BlockEntity entity) {
+        super(ModMenuTypes.WORKPLACE_OF_CORRUPTION_MENU.get(), pContainerId);
+        blockEntity = (WorkplaceOfCorruptionBlockEntity) entity;
         this.access = pAccess;
         this.player = pPlayerInventory.player;
-        this.addSlot(new WorkplaceOfCorruptionResultSlot(pPlayerInventory.player, this.craftSlots, this.resultSlots, 0, 160, 54));
+        this.fluidStack = blockEntity.getFluidStack();
+        this.addSlot(new WorkplaceOfCorruptionResultSlot(pPlayerInventory.player, this.craftSlots, this.resultSlots, 0, 146, 54));
 
         for(int j = 0; j < 5; ++j) {
             for(int k = 0; k < 5; ++k) {
@@ -59,11 +63,23 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorrupt
 
     }
 
+    public void setFluid(FluidStack fluidStack) {
+        this.fluidStack = fluidStack;
+    }
+
+    public FluidStack getFluidStack() {
+        return fluidStack;
+    }
+
+    public WorkplaceOfCorruptionBlockEntity getBlockEntity() {
+        return this.blockEntity;
+    }
+
     protected static void slotChangedCraftingGrid(AbstractContainerMenu pMenu, Level pLevel, Player pPlayer, WorkplaceOfCorruptionContainer pContainer, ResultContainer pResult) {
         if (!pLevel.isClientSide) {
             ServerPlayer serverplayer = (ServerPlayer)pPlayer;
             ItemStack itemstack = ItemStack.EMPTY;
-            Optional<WorkplaceOfCorruptionRecipe> optional = pLevel.getServer().getRecipeManager().getRecipeFor(ModRecipeTypes.WORKPLACE_OF_CORRUPTION.get(), pContainer, pLevel);
+            Optional<WorkplaceOfCorruptionRecipe> optional = pLevel.getServer().getRecipeManager().getRecipeFor(WorkplaceOfCorruptionRecipe.Type.INSTANCE, pContainer, pLevel);
             if (optional.isPresent()) {
                 WorkplaceOfCorruptionRecipe craftingrecipe = optional.get();
                 if (pResult.setRecipeUsed(pLevel, serverplayer, craftingrecipe)) {

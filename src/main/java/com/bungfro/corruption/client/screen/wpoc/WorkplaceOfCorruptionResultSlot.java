@@ -1,6 +1,6 @@
 package com.bungfro.corruption.client.screen.wpoc;
 
-import com.bungfro.corruption.recipe.ModRecipeTypes;
+import com.bungfro.corruption.recipe.WorkplaceOfCorruptionRecipe;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -70,7 +70,7 @@ public class WorkplaceOfCorruptionResultSlot extends Slot {
     public void onTake(Player pPlayer, ItemStack pStack) {
         this.checkTakeAchievements(pStack);
         net.minecraftforge.common.ForgeHooks.setCraftingPlayer(pPlayer);
-        NonNullList<ItemStack> nonnulllist = pPlayer.level.getRecipeManager().getRemainingItemsFor(ModRecipeTypes.WORKPLACE_OF_CORRUPTION.get(), this.craftSlots, pPlayer.level);
+        NonNullList<ItemStack> nonnulllist = pPlayer.level.getRecipeManager().getRemainingItemsFor(WorkplaceOfCorruptionRecipe.Type.INSTANCE, this.craftSlots, pPlayer.level);
         net.minecraftforge.common.ForgeHooks.setCraftingPlayer(null);
         for(int i = 0; i < nonnulllist.size(); ++i) {
             ItemStack itemstack = this.craftSlots.getItem(i);

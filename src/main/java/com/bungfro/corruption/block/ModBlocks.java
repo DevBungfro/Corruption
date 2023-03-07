@@ -32,9 +32,9 @@ public class ModBlocks {
             new Block(BlockBehaviour.Properties.of(Material.PISTON).strength(6f).requiresCorrectToolForDrops()));
 
 
-    public static final RegistryObject<Block> WORKPLACE_OF_CORRUPTION = registerBlock("workplace_of_corruption", () ->
-            new WorkplaceOfCorruptionBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(4F).sound(SoundType.METAL)));
-
+    public static final RegistryObject<Block> WORKPLACE_OF_CORRUPTION = registerBlock("workplace_of_corruption",
+            () -> new WorkplaceOfCorruptionBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()));
 
     // Corrupted Grass Tiers
     public static final RegistryObject<Block> CORRUPTED_GRASS_T1 = registerBlock("corrupted_grass_t1", () ->

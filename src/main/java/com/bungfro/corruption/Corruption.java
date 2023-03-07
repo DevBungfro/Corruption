@@ -2,10 +2,9 @@ package com.bungfro.corruption;
 
 import com.bungfro.corruption.block.ModBlocks;
 import com.bungfro.corruption.client.screen.ModMenuTypes;
-import com.bungfro.corruption.entity.ModEntity;
+import com.bungfro.corruption.entity.ModEntityTypes;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
 import com.bungfro.corruption.item.ModItems;
-import com.bungfro.corruption.recipe.ModRecipeTypes;
 import com.bungfro.corruption.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -18,6 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Corruption.MOD_ID)
@@ -35,11 +35,13 @@ public class Corruption
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        ModEntity.ENTITIES.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
+
         ModMenuTypes.register(modEventBus);
 
-        ModRecipeTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+
+        GeckoLib.initialize();
 
         MinecraftForge.EVENT_BUS.register(this);
 
