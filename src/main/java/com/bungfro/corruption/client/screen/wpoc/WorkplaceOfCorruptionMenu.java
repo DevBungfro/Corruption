@@ -27,6 +27,7 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorrupt
     private final ResultContainer resultSlots = new ResultContainer();
     private final ContainerLevelAccess access;
     private final Player player;
+    private final Level level;
 
     public final WorkplaceOfCorruptionBlockEntity blockEntity;
 
@@ -41,6 +42,7 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorrupt
         blockEntity = (WorkplaceOfCorruptionBlockEntity) entity;
         this.access = pAccess;
         this.player = pPlayerInventory.player;
+        this.level = player.level;
         this.fluidStack = blockEntity.getFluidStack();
         this.addSlot(new WorkplaceOfCorruptionResultSlot(pPlayerInventory.player, this.craftSlots, this.resultSlots, 0, 146, 54));
 
@@ -134,7 +136,8 @@ public class WorkplaceOfCorruptionMenu extends RecipeBookMenu<WorkplaceOfCorrupt
      * Determines whether supplied player can use this container
      */
     public boolean stillValid(Player pPlayer) {
-        return stillValid(this.access, pPlayer, ModBlocks.WORKPLACE_OF_CORRUPTION.get());
+        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
+                player, ModBlocks.WORKPLACE_OF_CORRUPTION.get());
     }
 
 

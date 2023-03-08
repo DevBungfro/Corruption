@@ -1,6 +1,7 @@
 package com.bungfro.corruption;
 
 import com.bungfro.corruption.block.ModBlocks;
+import com.bungfro.corruption.block.entity.ModBlockEntities;
 import com.bungfro.corruption.client.screen.ModMenuTypes;
 import com.bungfro.corruption.entity.ModEntityTypes;
 import com.bungfro.corruption.item.ModCreativeModeTabs;
@@ -34,6 +35,7 @@ public class Corruption
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModEntityTypes.register(modEventBus);
 

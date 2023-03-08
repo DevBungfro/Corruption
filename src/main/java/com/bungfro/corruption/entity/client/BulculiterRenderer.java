@@ -18,7 +18,7 @@ public class BulculiterRenderer extends GeoEntityRenderer<BulculiterEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(BulculiterEntity instance) {
-        return new ResourceLocation(Corruption.MOD_ID, "textures/entity/chomper_texture.png");
+        return new ResourceLocation(Corruption.MOD_ID, "textures/entity/bulculiter_texture.png");
     }
 
     @Override

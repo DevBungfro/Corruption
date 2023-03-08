@@ -1,6 +1,5 @@
 package com.bungfro.corruption.block.entity;
 
-import com.bungfro.corruption.client.screen.wpoc.WorkplaceOfCorruptionContainer;
 import com.bungfro.corruption.client.screen.wpoc.WorkplaceOfCorruptionMenu;
 import com.bungfro.corruption.networking.ModMessages;
 import com.bungfro.corruption.networking.packet.EnergySyncS2CPacket;
@@ -13,11 +12,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.capabilities.Capability;
@@ -78,7 +75,7 @@ public class WorkplaceOfCorruptionBlockEntity extends BlockEntity implements Men
     public WorkplaceOfCorruptionMenu createMenu(int id, Inventory inventory, Player player) {
         ModMessages.sendToClients(new EnergySyncS2CPacket(this.ENERGY_STORAGE.getEnergyStored(), getBlockPos()));
         ModMessages.sendToClients(new FluidSyncS2CPacket(this.getFluidStack(), worldPosition));
-        return new WorkplaceOfCorruptionMenu(id, inventory, ContainerLevelAccess.NULL, this);
+        return new WorkplaceOfCorruptionMenu(id, inventory, ContainerLevelAccess.create(player.level, getBlockPos()), this);
     }
 
     @Override
