@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "end": "corruption:block/camphor_log_top",
+    "side": "corruption:block/camphor_log_side"
+      },
+}

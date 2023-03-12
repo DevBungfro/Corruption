@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "corruption:blocks/camphor_leaves",
+    "particle": "corruption:blocks/camphor_leaves"
+  }
+}
